@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from .models import Product
+from . import views
 
 def index(request):
     products = Product.objects.all().order_by('ranking')
