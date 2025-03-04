@@ -1,22 +1,55 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
 {% block content %}
-<div class="container mt-5">
-    <h1 class="text-center mb-4">Bestselling Skincare Products</h1>
+<!-- Hero Section with Big Image -->
+<section class="hero-pink d-flex align-items-center text-white">
+  <div class="container py-5">
     <div class="row">
-        {% for product in products %}
-        <div class="col-md-4 col-sm-6 mb-4">
-            <div class="card product-card shadow">
-                <img src="{{ product.image_url }}" class="card-img-top" alt="{{ product.name }}">
-                <div class="card-body">
-                    <h5 class="card-title">{{ product.name }}</h5>
-                    <p class="card-text">{{ product.description }}</p>
-                    <p class="price">${{ product.price }}</p>
-                    <a href="#" class="btn btn-primary">View Details</a>
-                </div>
-            </div>
-        </div>
-        {% endfor %}
+      <div class="col-md-6 text-center text-md-start">
+        <h1 class="display-4 fw-bold">Radiant Skin Awaits</h1>
+        <p class="lead mb-4">
+          Discover the best in Korean skincare, curated by experts for glowing, healthy skin.
+        </p>
+        <a href="#products" class="btn btn-light btn-lg px-4 py-2">
+          Explore Products
+        </a>
+      </div>
+      <div class="col-md-6 text-center mt-4 mt-md-0">
+        <!-- Keep your big hero image here -->
+        <img
+          src="https://via.placeholder.com/450x400?text=Beautiful+Skin+Model"
+          alt="Beautiful Skin"
+          class="img-fluid rounded"
+        />
+      </div>
     </div>
-</div>
+  </div>
+</section>
+
+<!-- Product Showcase (Smaller Cards, More Items per Row) -->
+<section class="py-5" id="products">
+  <div class="container">
+    <h2 class="text-center mb-5">Our Bestselling Beauty Products</h2>
+    <div class="row">
+      {% for product in products %}
+      <!-- 4 products per row on large, 3 on medium, 2 on small, 1 on extra small -->
+      <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
+        <div class="card product-card shadow-sm">
+          <img
+            src="{{ product.image_url }}"
+            class="card-img-top product-img"
+            alt="{{ product.name }}"
+          />
+          <div class="card-body text-center">
+            <h5 class="card-title fw-bold">{{ product.name }}</h5>
+            <p class="card-text text-muted">{{ product.description }}</p>
+            <p class="price">${{ product.price }}</p>
+            <a href="#" class="btn btn-pink">Buy Now</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
 {% endblock %}

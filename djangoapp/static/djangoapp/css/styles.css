@@ -1,83 +1,120 @@
-/* Navbar styling */
-.navbar {
-    background: linear-gradient(to right, #ff9a9e, #fad0c4);
-    padding: 15px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .navbar-brand {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: white !important;
-  }
-  
-  .navbar-toggler {
-    border: none;
-  }
-  
-  .navbar-toggler-icon {
-    filter: invert(100%);
-  }
-  
-  .navbar-nav .nav-link {
-    color: white !important;
-    font-size: 1.2rem;
-    margin-right: 15px;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .navbar-nav .nav-link:hover {
-    color: #f8f9fa !important;
-    transform: scale(1.05);
-  }
-  
+/***************************************
+  Pinkish Theme Global Styles
+***************************************/
 
-  /* Product Page Styling */
-.container {
-    max-width: 1200px;
-  }
-  
-  /* Product Card */
-  .product-card {
-    border-radius: 12px;
-    overflow: hidden;
-    transition: transform 0.3s ease-in-out;
-    background: white;
-  }
-  
-  .product-card:hover {
-    transform: scale(1.05);
-  }
-  
-  .card-img-top {
-    height: 250px;
-    object-fit: cover;
-  }
-  
-  .card-body {
+/* Soft Pink Gradient for Navbar & Footer */
+.pink-navbar {
+  background: linear-gradient(to right, #ff9a9e, #fecfef);
+}
+
+.pink-footer {
+  background: linear-gradient(to right, #fecfef, #ff9a9e);
+}
+
+/* Pink Hero Section */
+.hero-pink {
+  background: linear-gradient(135deg, #ffc6d9 0%, #ff9a9e 100%);
+  min-height: 60vh;
+  color: #fff;
+}
+
+/***************************************
+  Buttons & Custom Colors
+***************************************/
+.btn-pink {
+  background-color: #ff7aa2;
+  color: #fff;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-pink:hover {
+  background-color: #ff3c84;
+  color: #fff;
+}
+
+/***************************************
+  Product Card Styling
+***************************************/
+.product-card {
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
+}
+.product-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.product-card .product-img {
+  height: 300px;
+  object-fit: cover;
+}
+
+/* Price Text */
+.price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #e44d26;
+}
+
+/***************************************
+  Responsive Tweaks (Optional)
+***************************************/
+@media (max-width: 767px) {
+  .hero-pink {
     text-align: center;
+    min-height: 50vh;
   }
-  
-  .card-title {
-    font-size: 1.2rem;
-    font-weight: bold;
+  .hero-pink img {
+    max-width: 70%;
   }
-  
-  .card-text {
-    font-size: 0.9rem;
-    color: #555;
-  }
-  
-  .price {
-    font-size: 1.3rem;
-    font-weight: bold;
-    color: #e44d26;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .product-card {
-      margin-bottom: 20px;
-    }
-  }
-  
+}
+
+
+/* Hero Section - Keep as is */
+.hero-pink {
+  background: linear-gradient(135deg, #ffc6d9 0%, #ff9a9e 100%);
+  min-height: 60vh;
+  color: #fff;
+}
+
+/* Pink Button */
+.btn-pink {
+  background-color: #ff7aa2;
+  color: #fff;
+  border: none;
+  transition: background-color 0.3s ease;
+  padding: 0.5rem 1rem; /* Slightly smaller for a more compact look */
+}
+
+.btn-pink:hover {
+  background-color: #ff3c84;
+  color: #fff;
+}
+
+/* Product Card Styling - smaller product image */
+.product-card {
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Tighter Image Dimensions */
+.product-img {
+  height: 200px;   /* smaller so we can fit more items in a row */
+  object-fit: cover;
+}
+
+.price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #e44d26;
+}
