@@ -11,56 +11,119 @@
   background: linear-gradient(to right, #fecfef, #ff9a9e);
 }
 
-/* Pink Hero Section */
+/***************************************
+  Hero Section
+***************************************/
 .hero-pink {
   background: linear-gradient(135deg, #ffc6d9 0%, #ff9a9e 100%);
   min-height: 60vh;
   color: #fff;
-}
-
-/***************************************
-  Buttons & Custom Colors
-***************************************/
-.btn-pink {
-  background-color: #ff7aa2;
-  color: #fff;
-  border: none;
-  transition: background-color 0.3s ease;
-}
-
-.btn-pink:hover {
-  background-color: #ff3c84;
-  color: #fff;
-}
-
-/***************************************
-  Product Card Styling
-***************************************/
-.product-card {
-  border-radius: 8px;
   overflow: hidden;
+}
+
+/***************************************
+  Pastel "Bubble" Product Design
+***************************************/
+
+/* Container for each product item */
+.bubble-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background-color: #fff;
-}
-.product-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
 }
 
-.product-card .product-img {
-  height: 300px;
+/* Ranking badge (if product has ranking) */
+.ranking-badge {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  background-color: #ffd1e1;
+  color: #e61e76;
+  font-weight: bold;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+/* Soft, pastel bubble shadow around the product image */
+.bubble-shadow {
+  background: rgba(255, 232, 240, 0.5); /* pastel pink translucent */
+  border-radius: 50%;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(255, 149, 190, 0.2); /* soft pink shadow */
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* The circle that holds the image */
+.bubble-image {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* The actual product image inside the "bubble" */
+.product-img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  display: block;
 }
 
-/* Price Text */
+/* Info text under the bubble */
+.bubble-info {
+  text-align: center;
+  margin-top: 0.75rem;
+}
+
+/* Product name, description, price */
+.bubble-info h5 {
+  font-size: 1rem;
+  color: #3c3c3c;
+}
+.bubble-info p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #888;
+}
 .price {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: bold;
   color: #e44d26;
 }
 
+/* A custom pastel button matching our theme */
+.btn-pastel {
+  background-color: #ffe0eb;
+  color: #e61e76;
+  border: none;
+  transition: background-color 0.3s ease;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+}
+.btn-pastel:hover {
+  background-color: #ffd1e1;
+  color: #e61e76;
+}
+
+/* Hover effect: product bubble "floats" */
+.bubble-container:hover .bubble-shadow {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(255, 149, 190, 0.3);
+}
+
+.bubble-container:hover {
+  transform: translateY(-3px);
+}
+
 /***************************************
-  Responsive Tweaks (Optional)
+  Responsive Tweaks
 ***************************************/
 @media (max-width: 767px) {
   .hero-pink {
@@ -72,49 +135,83 @@
   }
 }
 
-
-/* Hero Section - Keep as is */
-.hero-pink {
-  background: linear-gradient(135deg, #ffc6d9 0%, #ff9a9e 100%);
-  min-height: 60vh;
-  color: #fff;
+/***************************************
+  1) Make Navbar Text White
+***************************************/
+/* Target the nav links and brand */
+.pink-navbar .navbar-brand,
+.pink-navbar .nav-link {
+  color: #fff !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4); /* optional subtle shadow */
 }
 
-/* Pink Button */
-.btn-pink {
-  background-color: #ff7aa2;
-  color: #fff;
-  border: none;
-  transition: background-color 0.3s ease;
-  padding: 0.5rem 1rem; /* Slightly smaller for a more compact look */
+/* Hover effect for nav links (optional) */
+.pink-navbar .nav-link:hover {
+  color: #e8e8e8 !important;
 }
 
-.btn-pink:hover {
-  background-color: #ff3c84;
-  color: #fff;
+/***************************************
+  2) Style the Heading
+***************************************/
+.beauty-heading {
+  font-size: 2rem;            /* Larger text */
+  font-weight: 700;           /* Bold look */
+  color: #ff7aa2;             /* Soft pink color (choose what you like) */
+  letter-spacing: 1px;        /* Slight spacing */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin-bottom: 2rem;        /* Extra spacing below heading */
 }
 
-/* Product Card Styling - smaller product image */
-.product-card {
-  border-radius: 8px;
-  overflow: hidden;
-  background-color: #fff;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* Custom Pink Navbar Styling */
+.pink-navbar {
+  background: linear-gradient(135deg, #ff9a9e, #fecfef);
+  border-bottom: 2px solid #ff7aa2;
+  padding: 0.75rem 1rem;
 }
 
-.product-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-}
-
-/* Tighter Image Dimensions */
-.product-img {
-  height: 200px;   /* smaller so we can fit more items in a row */
-  object-fit: cover;
-}
-
-.price {
-  font-size: 1.2rem;
+/* Ensure the navbar brand and links are white and bold */
+.pink-navbar .navbar-brand,
+.pink-navbar .nav-link {
+  color: #fff !important;
   font-weight: bold;
-  color: #e44d26;
 }
+
+/* Optional: Add a subtle hover effect on nav links */
+.pink-navbar .nav-link:hover,
+.pink-navbar .nav-link:focus {
+  color: #ffe0eb !important;
+}
+
+
+/***************************************
+  Custom Navbar & Footer
+***************************************/
+/* Custom Navbar Styling (not locked) */
+.custom-navbar {
+  background: linear-gradient(135deg, #ff9a9e, #ffc6d9);
+  padding: 0.75rem 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* Removed position: sticky and related properties */
+}
+
+.custom-navbar .navbar-brand,
+.custom-navbar .nav-link {
+  color: #fff !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  transition: color 0.3s ease;
+}
+
+.custom-navbar .nav-link:hover,
+.custom-navbar .nav-link:focus {
+  color: #ffe0eb !important;
+}
+
+.custom-navbar .navbar-toggler-icon {
+  filter: invert(100%);
+}
+
+
+/***************************************
+  (Other styles remain unchanged)
+***************************************/
+

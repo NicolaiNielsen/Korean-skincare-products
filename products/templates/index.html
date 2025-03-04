@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<!-- Hero Section with Big Image -->
+<!-- Hero Section (remains unchanged, or customize as needed) -->
 <section class="hero-pink d-flex align-items-center text-white">
   <div class="container py-5">
     <div class="row">
@@ -15,7 +15,6 @@
         </a>
       </div>
       <div class="col-md-6 text-center mt-4 mt-md-0">
-        <!-- Keep your big hero image here -->
         <img
           src="https://via.placeholder.com/450x400?text=Beautiful+Skin+Model"
           alt="Beautiful Skin"
@@ -26,25 +25,35 @@
   </div>
 </section>
 
-<!-- Product Showcase (Smaller Cards, More Items per Row) -->
+<!-- Product Showcase (Pastel, 'bubble' design) -->
 <section class="py-5" id="products">
   <div class="container">
-    <h2 class="text-center mb-5">Our Bestselling Beauty Products</h2>
+    <h2 class="beauty-heading text-center mb-5">Bestselling Beauty Products in Korea</h2>
     <div class="row">
       {% for product in products %}
-      <!-- 4 products per row on large, 3 on medium, 2 on small, 1 on extra small -->
       <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
-        <div class="card product-card shadow-sm">
-          <img
-            src="{{ product.image_url }}"
-            class="card-img-top product-img"
-            alt="{{ product.name }}"
-          />
-          <div class="card-body text-center">
-            <h5 class="card-title fw-bold">{{ product.name }}</h5>
-            <p class="card-text text-muted">{{ product.description }}</p>
-            <p class="price">${{ product.price }}</p>
-            <a href="#" class="btn btn-pink">Buy Now</a>
+        <div class="bubble-container">
+          <!-- If product has a ranking, show a pastel badge -->
+          {% if product.ranking %}
+            <div class="ranking-badge pastel-badge">#{{ product.ranking }}</div>
+          {% endif %}
+          <!-- Bubble with semi-translucent pastel background -->
+          <div class="bubble-shadow">
+            <!-- Product Image inside a circle-like container -->
+            <div class="bubble-image">
+              <img
+                src="{{ product.image_url }}"
+                alt="{{ product.name }}"
+                class="product-img"
+              />
+            </div>
+          </div>
+          <!-- Product Info -->
+          <div class="bubble-info text-center mt-3">
+            <h5 class="fw-bold mb-1">{{ product.name }}</h5>
+            <p class="text-muted mb-2">{{ product.description }}</p>
+            <p class="price mb-3">${{ product.price }}</p>
+            <a href="#" class="btn btn-pastel">Buy Now</a>
           </div>
         </div>
       </div>
