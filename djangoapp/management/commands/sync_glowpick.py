@@ -69,3 +69,7 @@ class Command(BaseCommand):
                 self.stdout.write(f"Created new product: {obj.name}")
             else:
                 self.stdout.write(f"Updated product: {obj.name}")
+
+# Usage:
+# python manage.py sync_glowpick
+
