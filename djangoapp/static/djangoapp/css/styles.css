@@ -206,6 +206,8 @@
   color: #ffe0eb !important;
 }
 
+/* Custom Footer Styling */
+
 .custom-navbar .navbar-toggler-icon {
   filter: invert(100%);
 }
